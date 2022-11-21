@@ -25,6 +25,14 @@ p {
   margin-bottom: 20px;
 }
 
+a {
+  color: #ffffff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .container {
   max-width: 100%;
 }
@@ -59,6 +67,11 @@ p {
   margin-bottom: 20px;
 }
 
+.right-pane--separator {
+  border-top: 1px solid #ffffff;
+  margin-bottom: 20px;
+}
+
 .left-pane--projects-list {
   width: 100%;
 }
@@ -69,6 +82,7 @@ p {
 
 .left-pane--projects-list--title {
   width: 60%;
+  padding-bottom: .3rem;
 }
 
 .left-pane--projects-list--category {
