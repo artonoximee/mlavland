@@ -21,6 +21,10 @@ body {
   font-size: .8em;
 }
 
+p {
+  margin-bottom: 20px;
+}
+
 .container {
   max-width: 100%;
 }
@@ -43,13 +47,31 @@ body {
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-.logo {
+.left-pane--logo {
   font-family: Monument;
   font-size: 4.5rem;
   text-align: center;
   margin: 0;
 }
 
-p {
+.left-pane--separator {
+  border-top: 1px solid #ffffff;
   margin-bottom: 20px;
+}
+
+.left-pane--projects-list {
+  width: 100%;
+}
+
+.left-pane--projects-list--year {
+  width: 20%;
+}
+
+.left-pane--projects-list--title {
+  width: 60%;
+}
+
+.left-pane--projects-list--category {
+  width: 20%;
+  text-align: right;
 }
