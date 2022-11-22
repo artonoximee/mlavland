@@ -76,17 +76,14 @@ a:hover {
 }
 
 .left-pane--logo {
-  text-align: center;
-  margin: 0;
-}
-
-.left-pane--logo--btn {
   font-family: "Monument";
   font-size: 4.5rem;
   text-decoration: none;
   color: #ffffff;
   background-color: #000000;
-  border: none;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1pt solid #000000;
 }
 
 .left-pane--logo--btn:hover {
@@ -103,8 +100,20 @@ a:hover {
   margin-bottom: 20px;
 }
 
+table {
+  border-collapse: collapse; 
+}
+
 .left-pane--projects-list {
   width: 100%;
+}
+
+.left-pane--projects-list--row {
+  border-bottom: 1px solid #000000;
+}
+
+.left-pane--projects-list--row:hover {
+  cursor: pointer;
 }
 
 .left-pane--projects-list--year {
@@ -114,20 +123,6 @@ a:hover {
 .left-pane--projects-list--title {
   width: 65%;
   padding-bottom: .2rem;
-}
-
-.left-pane--projects-list--btn {
-  margin: 0;
-  padding: 0;
-  font-family: "Fragment";
-  font-size: 1em;
-  color: #ffffff;
-  background-color: #000000;
-  border: none;
-}
-
-.left-pane--projects-list--btn:hover {
-  cursor: pointer;
 }
 
 .left-pane--projects-list--category {

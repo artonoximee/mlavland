@@ -6,19 +6,29 @@ let section1Height = section1.clientHeight
 let section2Height = section1Height + section2.clientHeight
 let section3Height = section2Height + section3.clientHeight
 
-let clientHeight = document.documentElement.clientHeight;
+let row1 = document.getElementById("click-1")
+let row2 = document.getElementById("click-2")
+let row3 = document.getElementById("click-3")
 
-let scrollPosition = document.documentElement.scrollTop + clientHeight / 2;
+// let clientHeight = document.documentElement.clientHeight;
+
+// let scrollPosition = document.documentElement.scrollTop + clientHeight / 2;
 
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
 function doSomething(scrollPos) {
+  row1.style.borderBottomColor = 'black';
+  row2.style.borderBottomColor = 'black';
+  row3.style.borderBottomColor = 'black';
   if (scrollPos < section1Height) {
-    console.log("Section 1");
+    row1.style.borderBottomColor = 'white';
   }
   if (scrollPos > section1Height && scrollPos < section2Height) {
-    console.log("Section 2");
+    row2.style.borderBottomColor = 'white';
+  }
+  if (scrollPos > section2Height && scrollPos < section3Height) {
+    row3.style.borderBottomColor = 'white';
   }
 }
 
@@ -35,19 +45,15 @@ document.addEventListener('scroll', (e) => {
   }
 });
 
-let btn1 = document.getElementById("click-1")
-let btn2 = document.getElementById("click-2")
-let btn3 = document.getElementById("click-3")
-
-btn1.addEventListener('click', (e) => {
+row1.addEventListener('click', (e) => {
   scrollToSection(1);
 })
 
-btn2.addEventListener('click', (e) => {
+row2.addEventListener('click', (e) => {
   scrollToSection(2);
 })
 
-btn3.addEventListener('click', (e) => {
+row3.addEventListener('click', (e) => {
   scrollToSection(3);
 })
 
