@@ -76,14 +76,21 @@ a:hover {
 }
 
 .left-pane--logo {
-  font-family: "Monument";
-  font-size: 4.5rem;
   text-align: center;
   margin: 0;
 }
 
-.left-pane--logo > a {
+.left-pane--logo--btn {
+  font-family: "Monument";
+  font-size: 4.5rem;
   text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+}
+
+.left-pane--logo--btn:hover {
+  cursor: pointer;
 }
 
 .left-pane--separator {
@@ -107,6 +114,20 @@ a:hover {
 .left-pane--projects-list--title {
   width: 65%;
   padding-bottom: .2rem;
+}
+
+.left-pane--projects-list--btn {
+  margin: 0;
+  padding: 0;
+  font-family: "Fragment";
+  font-size: 1em;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+}
+
+.left-pane--projects-list--btn:hover {
+  cursor: pointer;
 }
 
 .left-pane--projects-list--category {

@@ -34,3 +34,25 @@ document.addEventListener('scroll', (e) => {
     ticking = true;
   }
 });
+
+let btn1 = document.getElementById("click-1")
+let btn2 = document.getElementById("click-2")
+let btn3 = document.getElementById("click-3")
+
+btn1.addEventListener('click', (e) => {
+  scrollToSection(1);
+})
+
+btn2.addEventListener('click', (e) => {
+  scrollToSection(2);
+})
+
+btn3.addEventListener('click', (e) => {
+  scrollToSection(3);
+})
+
+function scrollToSection(num) {
+  document.getElementById(`section-${num}`).scrollIntoView({ 
+    behavior: 'smooth' 
+  })
+}
