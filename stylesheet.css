@@ -43,7 +43,8 @@ a:hover {
 }
 
 section {
-  padding-top: 30px;
+  margin-top: 1px;
+  padding-top: 20px;
   border-bottom: 1pt solid #ffffff;
 }
 
