@@ -1,3 +1,6 @@
+let lastKnownScrollPosition = 0;
+let ticking = false;
+
 let section1 = document.getElementById("section-1");
 let section2 = document.getElementById("section-2");
 let section3 = document.getElementById("section-3");
@@ -22,11 +25,21 @@ let row2 = document.getElementById("click-2")
 let row3 = document.getElementById("click-3")
 let row4 = document.getElementById("click-4")
 
-let clientHeight = document.documentElement.clientHeight;
-// let scrollPosition = document.documentElement.scrollTop + clientHeight / 2;
+row1.addEventListener('click', (e) => {
+  scrollToSection(1);
+})
 
-let lastKnownScrollPosition = 0;
-let ticking = false;
+row2.addEventListener('click', (e) => {
+  scrollToSection(2);
+})
+
+row3.addEventListener('click', (e) => {
+  scrollToSection(3);
+})
+
+row4.addEventListener('click', (e) => {
+  scrollToSection(4);
+})
 
 function doSomething(scrollPos) {
   console.log(scrollPos);
@@ -60,22 +73,6 @@ document.addEventListener('scroll', (e) => {
     ticking = true;
   }
 });
-
-row1.addEventListener('click', (e) => {
-  scrollToSection(1);
-})
-
-row2.addEventListener('click', (e) => {
-  scrollToSection(2);
-})
-
-row3.addEventListener('click', (e) => {
-  scrollToSection(3);
-})
-
-row4.addEventListener('click', (e) => {
-  scrollToSection(4);
-})
 
 function scrollToSection(num) {
   document.getElementById(`section-${num}`).scrollIntoView({ 
