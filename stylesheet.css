@@ -24,7 +24,7 @@ body {
   color: #ffffff;
   font-family: "Fragment";
   font-size: .8em;
-  cursor: url("cursors/square.png") 5 5, pointer;
+  /* cursor: url("cursors/square.png") 0 0, pointer; */
 }
 
 p {
@@ -41,7 +41,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  cursor: url("cursors/square-fill.png") 5 5, pointer;
+  /* cursor: url("cursors/square-fill.png") 0 0, pointer; */
 }
 
 section {
@@ -100,11 +100,13 @@ section {
   text-align: center;
   margin-bottom: 20px;
   border-bottom: 1pt solid #ffffff;
-  cursor: url("cursors/square-fill.png") 5 5, pointer;
+  /* cursor: url("cursors/square-fill.png") 0 0, pointer; */
+  cursor: pointer;
 }
 
 .left-pane--logo--btn:hover {
-  cursor: url("cursors/square-fill.png") 5 5, pointer;
+  /* cursor: url("cursors/square-fill.png") 0 0, pointer; */
+  cursor: pointer;
 }
 
 .left-pane--separator {
@@ -130,7 +132,8 @@ table {
 }
 
 .left-pane--projects-list--row.project:hover {
-  cursor: url("cursors/square-fill.png") 5 5, pointer;
+  /* cursor: url("cursors/square-fill.png") 0 0, pointer; */
+  cursor: pointer;
 }
 
 .left-pane--projects-list--year {
