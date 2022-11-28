@@ -36,6 +36,7 @@ for (let i = 0; i < rows.length; i++) {
 let logo = document.querySelector("div.left-pane--logo");
 
 logo.addEventListener('click', (e) => {
+  calculateHeights();
   window.scrollTo({
     top: 0,
     left: 0,
@@ -75,5 +76,3 @@ function colorBorderBottom(scrollPos) {
     }
   }
 }
-
-calculateHeights()
