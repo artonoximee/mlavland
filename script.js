@@ -12,8 +12,8 @@ function calculateHeights() {
   let h = 0;
   heights = [];
   sections.forEach(section => {
-    heights.push(section.offsetHeight + h);
-    h = h + section.offsetHeight;
+    heights.push(section.scrollHeight + h);
+    h = h + section.scrollHeight;
   });
 }
 
@@ -24,7 +24,7 @@ let rows = document.querySelectorAll("tr.project");
 for (let i = 0; i < rows.length; i++) {
   rows[i].addEventListener('click', (e) => {
     window.scrollTo({
-      top: heights[i] + 27,
+      top: heights[i] + 24 + i * 2,
       left: 0,
       behavior: 'smooth'
     });
