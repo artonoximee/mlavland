@@ -24,7 +24,7 @@ let rows = document.querySelectorAll("tr.project");
 for (let i = 0; i < rows.length; i++) {
   rows[i].addEventListener('click', (e) => {
     window.scrollTo({
-      top: heights[i] + 25,
+      top: heights[i] + 27,
       left: 0,
       behavior: 'smooth'
     });
