@@ -114,11 +114,6 @@ section {
   .right-pane {
     margin-left: 0;
     width: 100vw;
-    padding: 20px;
-    padding-bottom: 70vh;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
   }
 }
 
