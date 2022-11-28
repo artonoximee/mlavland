@@ -25,7 +25,7 @@ for (let i = 0; i < rows.length; i++) {
   rows[i].addEventListener('click', (e) => {
     calculateHeights();
     window.scrollTo({
-      top: heights[i] + 24 + i * 2,
+      top: heights[i] + 24 + i * 2.1,
       left: 0,
       behavior: 'smooth'
     });
