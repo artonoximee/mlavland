@@ -57,3 +57,15 @@ function colorBorderBottom(scrollPos) {
     }
   }
 }
+
+// Handle click on logo
+
+let logo = document.querySelector("div.left-pane--logo");
+
+logo.addEventListener('click', (e) => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+});
