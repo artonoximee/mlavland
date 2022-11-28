@@ -35,36 +35,42 @@ for (let i = 0; i < rows.length; i++) {
 
 document.addEventListener('scroll', (e) => {
   lastKnownScrollPosition = window.scrollY;
-
   if (!ticking) {
     window.requestAnimationFrame(() => {
-      doSomething(lastKnownScrollPosition);
+      colorBorderBottom(lastKnownScrollPosition);
       ticking = false;
     });
-
     ticking = true;
   }
 });
 
-function doSomething(scrollPos) {
-  console.log(scrollPos);
-  row1.style.borderBottomColor = 'black';
-  row2.style.borderBottomColor = 'black';
-  row3.style.borderBottomColor = 'black';
-  row4.style.borderBottomColor = 'black';
-  if (scrollPos < section1Height) {
-    row1.style.borderBottomColor = 'white';
-  }
-  if (scrollPos > section1Height && scrollPos < section2Height) {
-    row2.style.borderBottomColor = 'white';
-  }
-  if (scrollPos > section2Height && scrollPos < section3Height) {
-    row3.style.borderBottomColor = 'white';
-  }
-  if (scrollPos > section3Height && scrollPos < section4Height) {
-    row4.style.borderBottomColor = 'white';
+// Color border bottom when scroll is positioned on project section
+
+function colorBorderBottom(scrollPos) {
+  // console.log(scrollPos);
+  rows.forEach(row => {
+    row.style.borderBottomColor = "black";
+  });
+  for (let i = 0; i < sections.length; i++) {
+    if (scrollPos > heights[i - 1] && scrollPos < heights[i]) {
+      rows[i - 1].style.borderBottomColor = "white";
+    }
   }
 }
+
+
+  // if (scrollPos < section1Height) {
+  //   row1.style.borderBottomColor = 'white';
+  // }
+  // if (scrollPos > section1Height && scrollPos < section2Height) {
+  //   row2.style.borderBottomColor = 'white';
+  // }
+  // if (scrollPos > section2Height && scrollPos < section3Height) {
+  //   row3.style.borderBottomColor = 'white';
+  // }
+  // if (scrollPos > section3Height && scrollPos < section4Height) {
+  //   row4.style.borderBottomColor = 'white';
+  // }
 
 // let section1 = document.getElementById("section-1");
 // let section2 = document.getElementById("section-2");
