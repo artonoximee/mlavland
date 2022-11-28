@@ -15,6 +15,7 @@ function calculateHeights() {
     heights.push(section.scrollHeight + h);
     h = h + section.scrollHeight;
   });
+  // console.log(heights);
 }
 
 // Allow user to click on project row to scroll to corresponding project
@@ -25,7 +26,7 @@ for (let i = 0; i < rows.length; i++) {
   rows[i].addEventListener('click', (e) => {
     calculateHeights();
     window.scrollTo({
-      top: heights[i] + 24 + i * 2.1,
+      top: heights[i] + 24 + i * 2.3,
       left: 0,
       behavior: 'smooth'
     });
@@ -68,7 +69,6 @@ function colorBorderBottom(scrollPos) {
   if (scrollPos >= 0 && scrollPos < heights[0]) {
     logo.style.borderBottomColor = "white";
   } else {
-    console.log("down")
     logo.style.borderBottomColor = "black";
   }
   for (let i = 0; i < sections.length; i++) {
