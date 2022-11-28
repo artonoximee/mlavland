@@ -11,18 +11,27 @@ function calculateHeights() {
     heights.push(section.offsetHeight + h);
     h = h + section.offsetHeight;
   });
-  console.log(heights)
+  console.log(heights);
 }
 
-let section1 = document.getElementById("section-1");
-let section2 = document.getElementById("section-2");
-let section3 = document.getElementById("section-3");
-let section4 = document.getElementById("section-4");
+let rows = document.querySelectorAll("tr.project");
 
-let section1Height;
-let section2Height;
-let section3Height;
-let section4Height;
+for (let i = 0; i < rows.length; i++) {
+  rows[i].addEventListener('click', (e) => {
+    console.log("clicked", rows[i])
+    window.scrollTo(0, heights[i]);
+  })
+}
+
+// let section1 = document.getElementById("section-1");
+// let section2 = document.getElementById("section-2");
+// let section3 = document.getElementById("section-3");
+// let section4 = document.getElementById("section-4");
+
+// let section1Height;
+// let section2Height;
+// let section3Height;
+// let section4Height;
 
 // function calculateHeights() {
 //   section1Height = section1.offsetHeight
@@ -32,27 +41,26 @@ let section4Height;
 //   console.log(section1Height, section2Height, section3Height, section4Height)
 // }
 
+// let row1 = document.getElementById("click-1")
+// let row2 = document.getElementById("click-2")
+// let row3 = document.getElementById("click-3")
+// let row4 = document.getElementById("click-4")
 
-let row1 = document.getElementById("click-1")
-let row2 = document.getElementById("click-2")
-let row3 = document.getElementById("click-3")
-let row4 = document.getElementById("click-4")
+// row1.addEventListener('click', (e) => {
+//   scrollToSection(1);
+// })
 
-row1.addEventListener('click', (e) => {
-  scrollToSection(1);
-})
+// row2.addEventListener('click', (e) => {
+//   scrollToSection(2);
+// })
 
-row2.addEventListener('click', (e) => {
-  scrollToSection(2);
-})
+// row3.addEventListener('click', (e) => {
+//   scrollToSection(3);
+// })
 
-row3.addEventListener('click', (e) => {
-  scrollToSection(3);
-})
-
-row4.addEventListener('click', (e) => {
-  scrollToSection(4);
-})
+// row4.addEventListener('click', (e) => {
+//   scrollToSection(4);
+// })
 
 function doSomething(scrollPos) {
   console.log(scrollPos);
@@ -87,8 +95,8 @@ document.addEventListener('scroll', (e) => {
   }
 });
 
-function scrollToSection(num) {
-  document.getElementById(`section-${num}`).scrollIntoView({ 
-    behavior: 'smooth' 
-  })
-}
+// function scrollToSection(num) {
+//   document.getElementById(`section-${num}`).scrollIntoView({ 
+//     behavior: 'smooth' 
+//   })
+// }
