@@ -90,6 +90,7 @@ section {
   text-align: center;
   margin-bottom: 20px;
   border-bottom: 1pt solid #ffffff;
+  cursor: pointer;
 }
 
 .left-pane--logo--btn:hover {
