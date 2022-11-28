@@ -1,5 +1,9 @@
+// Initialize global variables for scroll detection
+
 let lastKnownScrollPosition = 0;
 let ticking = false;
+
+// Initialize array with sections heights
 
 let sections = document.querySelectorAll("section");
 let heights = [];
@@ -13,6 +17,8 @@ function calculateHeights() {
   });
 }
 
+// Allow user to click on project row to scroll to corresponding project
+
 let rows = document.querySelectorAll("tr.project");
 
 for (let i = 0; i < rows.length; i++) {
@@ -23,6 +29,41 @@ for (let i = 0; i < rows.length; i++) {
       behavior: 'smooth'
     });
   })
+}
+
+// Scroll event listener
+
+document.addEventListener('scroll', (e) => {
+  lastKnownScrollPosition = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      doSomething(lastKnownScrollPosition);
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+});
+
+function doSomething(scrollPos) {
+  console.log(scrollPos);
+  row1.style.borderBottomColor = 'black';
+  row2.style.borderBottomColor = 'black';
+  row3.style.borderBottomColor = 'black';
+  row4.style.borderBottomColor = 'black';
+  if (scrollPos < section1Height) {
+    row1.style.borderBottomColor = 'white';
+  }
+  if (scrollPos > section1Height && scrollPos < section2Height) {
+    row2.style.borderBottomColor = 'white';
+  }
+  if (scrollPos > section2Height && scrollPos < section3Height) {
+    row3.style.borderBottomColor = 'white';
+  }
+  if (scrollPos > section3Height && scrollPos < section4Height) {
+    row4.style.borderBottomColor = 'white';
+  }
 }
 
 // let section1 = document.getElementById("section-1");
@@ -63,39 +104,6 @@ for (let i = 0; i < rows.length; i++) {
 // row4.addEventListener('click', (e) => {
 //   scrollToSection(4);
 // })
-
-function doSomething(scrollPos) {
-  console.log(scrollPos);
-  row1.style.borderBottomColor = 'black';
-  row2.style.borderBottomColor = 'black';
-  row3.style.borderBottomColor = 'black';
-  row4.style.borderBottomColor = 'black';
-  if (scrollPos < section1Height) {
-    row1.style.borderBottomColor = 'white';
-  }
-  if (scrollPos > section1Height && scrollPos < section2Height) {
-    row2.style.borderBottomColor = 'white';
-  }
-  if (scrollPos > section2Height && scrollPos < section3Height) {
-    row3.style.borderBottomColor = 'white';
-  }
-  if (scrollPos > section3Height && scrollPos < section4Height) {
-    row4.style.borderBottomColor = 'white';
-  }
-}
-
-document.addEventListener('scroll', (e) => {
-  lastKnownScrollPosition = window.scrollY;
-
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      doSomething(lastKnownScrollPosition);
-      ticking = false;
-    });
-
-    ticking = true;
-  }
-});
 
 // function scrollToSection(num) {
 //   document.getElementById(`section-${num}`).scrollIntoView({ 
