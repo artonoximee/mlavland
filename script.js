@@ -1,6 +1,19 @@
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
+let sections = document.querySelectorAll("section");
+let heights = [];
+
+function calculateHeights() {
+  let h = 0;
+  heights = [];
+  sections.forEach(section => {
+    heights.push(section.offsetHeight + h);
+    h = h + section.offsetHeight;
+  });
+  console.log(heights)
+}
+
 let section1 = document.getElementById("section-1");
 let section2 = document.getElementById("section-2");
 let section3 = document.getElementById("section-3");
@@ -11,13 +24,13 @@ let section2Height;
 let section3Height;
 let section4Height;
 
-function calculateHeights() {
-  section1Height = section1.offsetHeight
-  section2Height = section1Height + section2.offsetHeight
-  section3Height = section2Height + section3.offsetHeight
-  section4Height = section3Height + section4.offsetHeight
-  console.log(section1Height, section2Height, section3Height, section4Height)
-}
+// function calculateHeights() {
+//   section1Height = section1.offsetHeight
+//   section2Height = section1Height + section2.offsetHeight
+//   section3Height = section2Height + section3.offsetHeight
+//   section4Height = section3Height + section4.offsetHeight
+//   console.log(section1Height, section2Height, section3Height, section4Height)
+// }
 
 
 let row1 = document.getElementById("click-1")
