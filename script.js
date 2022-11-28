@@ -23,6 +23,7 @@ let rows = document.querySelectorAll("tr.project");
 
 for (let i = 0; i < rows.length; i++) {
   rows[i].addEventListener('click', (e) => {
+    calculateHeights();
     window.scrollTo({
       top: heights[i] + 24 + i * 2,
       left: 0,
