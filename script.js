@@ -11,15 +11,17 @@ function calculateHeights() {
     heights.push(section.offsetHeight + h);
     h = h + section.offsetHeight;
   });
-  console.log(heights);
 }
 
 let rows = document.querySelectorAll("tr.project");
 
 for (let i = 0; i < rows.length; i++) {
   rows[i].addEventListener('click', (e) => {
-    console.log("clicked", rows[i])
-    window.scrollTo(0, heights[i]);
+    window.scrollTo({
+      top: heights[i] + 25,
+      left: 0,
+      behavior: 'smooth'
+    });
   })
 }
 
