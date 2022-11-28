@@ -92,7 +92,6 @@ carousels.forEach(carousel => {
   carousel.appendChild(imgs[i]);
   carousel.addEventListener('click', (e) => {
     if (i + 1 < imgs.length) {
-      console.log(i, imgs.length);
       carousel.innerHTML = "";
       i = i + 1
       carousel.appendChild(imgs[i]);
