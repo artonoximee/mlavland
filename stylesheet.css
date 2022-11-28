@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Monument";
   src: url(fonts/PPMonumentExtended-Bold.woff);
+  /* src: url(fonts/PPMonumentExtended-Regular.otf); */
 }
 
 @font-face {
