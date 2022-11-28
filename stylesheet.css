@@ -81,6 +81,13 @@ section {
   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
 }
 
+@media only screen and (max-width: 925px) {
+  .bottom-gradient {
+    width: 100vw;
+    left: 0;
+  }
+}
+
 .left-pane {
   position: fixed;
   width: 50vw;
@@ -100,6 +107,21 @@ section {
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+@media only screen and (max-width: 925px) {
+  .left-pane {
+    display:none;
+  }
+  .right-pane {
+    margin-left: 0;
+    width: 100vw;
+    padding: 20px;
+    padding-bottom: 70vh;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+  }
+}
+
 .left-pane--logo {
   font-family: "Monument";
   font-size: 5vw;
@@ -111,6 +133,25 @@ section {
   border-bottom: 1pt solid #ffffff;
   /* cursor: url("cursors/square-fill.png") 0 0, pointer; */
   cursor: pointer;
+}
+
+.right-pane--logo {
+  font-family: "Monument";
+  font-size: 10vw;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1pt solid #ffffff;
+  
+  display: none;
+}
+
+@media only screen and (max-width: 925px) {
+  .right-pane--logo {
+    display: block;
+  }
 }
 
 .left-pane--logo--btn:hover {
@@ -134,6 +175,12 @@ table {
 
 .left-pane--projects-list {
   width: 100%;
+}
+
+@media only screen and (max-width: 925px) {
+  .left-pane--projects-list {
+    display: none;
+  }
 }
 
 .left-pane--projects-list--row {
