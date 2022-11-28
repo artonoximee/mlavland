@@ -129,6 +129,9 @@ table {
 
 .left-pane--projects-list--row {
   border-bottom: 1px solid #000000;
+  transition-property: border-bottom;
+  transition-duration: .4s;
+  transition-delay: .1s;
 }
 
 .left-pane--projects-list--row.project:hover {
