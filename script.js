@@ -75,3 +75,5 @@ function colorBorderBottom(scrollPos) {
     }
   }
 }
+
+calculateHeights()
