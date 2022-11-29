@@ -84,6 +84,7 @@ section {
 @media only screen and (max-width: 925px) {
   .bottom-gradient {
     width: 100vw;
+    height: 20vh;
     left: 0;
   }
 }
@@ -109,7 +110,8 @@ section {
 
 @media only screen and (max-width: 925px) {
   .left-pane {
-    display:none;
+    display: block;
+    width: calc(100vw - 40px);
   }
   .right-pane {
     margin-left: 0;
@@ -142,6 +144,7 @@ section {
   width: calc(100vw - 40px);
   display: none;
   z-index: 3;
+  cursor: pointer;
 }
 
 .top-gradient {
@@ -157,6 +160,9 @@ section {
 }
 
 @media only screen and (max-width: 925px) {
+  .left-pane--logo {
+    display: none;
+  }
   .right-pane--logo {
     display: block;
   }
@@ -182,20 +188,37 @@ section {
 
 table {
   border-collapse: collapse;
+  z-index: 3;
 }
 
 .left-pane--projects-list {
   width: 100%;
+  z-index: 3;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(20px);
+  display: none;
+  z-index: 9;
 }
 
 @media only screen and (max-width: 925px) {
   .left-pane--projects-list {
+    position: fixed;
+    top: 15vh;
+    width: calc(100vw - 40px);
+    z-index: 10;
     display: none;
   }
 }
 
 .left-pane--projects-list--row {
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
   /* transition-property: border-bottom;
   transition-duration: .1s;
   transition-delay: .1s; */

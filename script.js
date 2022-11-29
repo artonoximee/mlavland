@@ -21,15 +21,24 @@ function calculateHeights() {
 // Allow user to click on project row to scroll to corresponding project
 
 let rows = document.querySelectorAll("tr.project");
+let windowWidth = window.innerWidth;
 
 for (let i = 0; i < rows.length; i++) {
   rows[i].addEventListener('click', (e) => {
     calculateHeights();
-    window.scrollTo({
-      top: heights[i] + 24 + i * 2.3,
-      left: 0,
-      behavior: 'smooth'
-    });
+    if (windowWidth > 925) {
+      window.scrollTo({
+        top: heights[i] + 24 + i * 2.3,
+        left: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      window.scrollTo({
+        top: heights[i] + i * 2.54,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
   })
 }
 
@@ -44,6 +53,29 @@ logo.addEventListener('click', (e) => {
     left: 0,
     behavior: 'smooth'
   });
+});
+
+// Mobile : handle click on logo
+
+let mobileLogo = document.querySelector("div.right-pane--logo");
+let projectsTable = document.querySelector("table.left-pane--projects-list");
+let topGradient = document.querySelector("div.top-gradient");
+let bottomGradient = document.querySelector("div.bottom-gradient");
+let backdrop = document.querySelector("div.backdrop");
+
+mobileLogo.addEventListener('click', (e) => {
+  if (projectsTable.style.display === "block") {
+    projectsTable.style.display = "none";
+    backdrop.style.display = "none"
+    topGradient.style.display = "block";
+    bottomGradient.style.display = "block";
+  } else {
+    console.log(projectsTable.style.display)
+    projectsTable.style.display = "block";
+    backdrop.style.display = "block"
+    topGradient.style.display = "none";
+    bottomGradient.style.display = "none";
+  }
 });
 
 // Scroll event listener
@@ -64,7 +96,7 @@ document.addEventListener('scroll', (e) => {
 function colorBorderBottom(scrollPos) {
   // console.log(scrollPos);
   rows.forEach(row => {
-    row.style.borderBottomColor = "black";
+    row.style.borderBottomColor = "rgba(0,0,0,0)";
   });
   if (scrollPos >= 0 && scrollPos < heights[0]) {
     logo.style.borderBottomColor = "white";
