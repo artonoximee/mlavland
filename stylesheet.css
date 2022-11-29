@@ -53,6 +53,7 @@ section {
 
 .project-title {
   font-family: "Monument";
+  text-transform: uppercase;
 }
 
 .last {
