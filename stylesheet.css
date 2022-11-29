@@ -151,7 +151,7 @@ section {
   position: fixed;
   z-index: 2;
   width: 100vw;
-  height: 20vh;
+  height: 15vh;
   left: 0;
   top: 0;
   display: none;
@@ -212,6 +212,8 @@ table {
     position: fixed;
     top: 15vh;
     width: calc(100vw - 40px);
+    height: 80vh !important;
+    overflow-y: auto;
     z-index: 10;
     display: none;
   }
