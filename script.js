@@ -33,6 +33,7 @@ for (let i = 0; i < rows.length; i++) {
         behavior: 'smooth'
       });
     } else {
+      closeMobileMenu();
       window.scrollTo({
         top: heights[i] + i * 2.54,
         left: 0,
@@ -55,7 +56,7 @@ logo.addEventListener('click', (e) => {
   });
 });
 
-// Mobile : handle click on logo
+// Mobile menu
 
 let mobileLogo = document.querySelector("div.right-pane--logo");
 let projectsTable = document.querySelector("table.left-pane--projects-list");
@@ -63,18 +64,25 @@ let topGradient = document.querySelector("div.top-gradient");
 let bottomGradient = document.querySelector("div.bottom-gradient");
 let backdrop = document.querySelector("div.backdrop");
 
+function openMobileMenu() {
+  projectsTable.style.display = "block";
+  backdrop.style.display = "block"
+  topGradient.style.display = "none";
+  bottomGradient.style.display = "none";
+}
+
+function closeMobileMenu() {
+  projectsTable.style.display = "none";
+  backdrop.style.display = "none"
+  topGradient.style.display = "block";
+  bottomGradient.style.display = "block";
+}
+
 mobileLogo.addEventListener('click', (e) => {
   if (projectsTable.style.display === "block") {
-    projectsTable.style.display = "none";
-    backdrop.style.display = "none"
-    topGradient.style.display = "block";
-    bottomGradient.style.display = "block";
+    closeMobileMenu();
   } else {
-    console.log(projectsTable.style.display)
-    projectsTable.style.display = "block";
-    backdrop.style.display = "block"
-    topGradient.style.display = "none";
-    bottomGradient.style.display = "none";
+    openMobileMenu();
   }
 });
 
@@ -134,3 +142,5 @@ carousels.forEach(carousel => {
     }
   })
 })
+
+calculateHeights();
