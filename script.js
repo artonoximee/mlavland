@@ -35,7 +35,7 @@ for (let i = 0; i < rows.length; i++) {
     } else {
       closeMobileMenu();
       window.scrollTo({
-        top: heights[i] + i * 2.54,
+        top: heights[i] + i * 2.58,
         left: 0,
         behavior: 'smooth'
       });
@@ -67,15 +67,15 @@ let backdrop = document.querySelector("div.backdrop");
 function openMobileMenu() {
   projectsTable.style.display = "block";
   backdrop.style.display = "block"
-  topGradient.style.display = "none";
-  bottomGradient.style.display = "none";
+  // topGradient.style.display = "none";
+  // bottomGradient.style.display = "none";
 }
 
 function closeMobileMenu() {
   projectsTable.style.display = "none";
   backdrop.style.display = "none"
-  topGradient.style.display = "block";
-  bottomGradient.style.display = "block";
+  // topGradient.style.display = "block";
+  // bottomGradient.style.display = "block";
 }
 
 mobileLogo.addEventListener('click', (e) => {
@@ -108,8 +108,10 @@ function colorBorderBottom(scrollPos) {
   });
   if (scrollPos >= 0 && scrollPos < heights[0]) {
     logo.style.borderBottomColor = "white";
+    mobileLogo.style.borderBottomColor = "white";
   } else {
     logo.style.borderBottomColor = "black";
+    mobileLogo.style.borderBottomColor = "rgba(0,0,0,0)";
   }
   for (let i = 0; i < sections.length; i++) {
     if (scrollPos > heights[i - 1] && scrollPos < heights[i]) {

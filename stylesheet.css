@@ -83,9 +83,10 @@ section {
 
 @media only screen and (max-width: 925px) {
   .bottom-gradient {
-    width: 100vw;
+    /* width: 100vw;
     height: 20vh;
-    left: 0;
+    left: 0; */
+    display: none;
   }
 }
 
@@ -167,7 +168,7 @@ section {
     display: block;
   }
   .top-gradient {
-    display: block;
+    display: none;
   }
 }
 
