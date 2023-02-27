@@ -246,7 +246,7 @@ table {
 }
 
 .left-pane--projects-list--year {
-  width: 15%;
+  width: 14%;
 }
 
 .left-pane--projects-list--title {
@@ -258,6 +258,22 @@ table {
 .left-pane--projects-list--category {
   width: 30%;
   text-align: right;
+}
+
+@media only screen and (max-width: 925px) {
+  .left-pane--projects-list--year {
+    width: 14%;
+  }
+  
+  .left-pane--projects-list--title {
+    width: 55%;
+    padding-bottom: .15rem;
+    padding-bottom: .15rem;
+  }
+  
+  .left-pane--projects-list--category {
+    display:none;
+  }
 }
 
 .right-pane--img-project {
