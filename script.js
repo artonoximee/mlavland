@@ -146,3 +146,22 @@ carousels.forEach(carousel => {
 })
 
 calculateHeights();
+
+// Opacity decrease
+
+function decreaseOpacity() {
+  var currentOpacity = parseFloat(document.body.style.opacity || 1);
+    if (currentOpacity == 0) {
+    } else {
+      currentOpacity -= 0.1;
+    }
+    document.body.style.opacity = currentOpacity;
+}
+
+function setOpacityToOne() {
+  document.body.style.opacity = 1;
+}
+
+var opacityInterval = setInterval(decreaseOpacity, 1000);
+document.addEventListener('mousemove', setOpacityToOne);
+window.addEventListener('scroll', setOpacityToOne);
