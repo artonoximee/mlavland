@@ -27,6 +27,8 @@ body {
   font-size: .8em;
   opacity: 1;
   transition: opacity 666ms linear;
+  width: 100vw;
+  overflow-x: hidden;
   /* cursor: url("cursors/square.png") 0 0, pointer; */
 }
 
@@ -123,7 +125,8 @@ section {
 @media only screen and (max-width: 925px) {
   .left-pane {
     display: block;
-    width: calc(100vw - 40px);
+    width: calc(100vw);
+    overflow-x: hidden;
   }
   .right-pane {
     margin-left: 0;
@@ -219,8 +222,8 @@ table {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 120vh;
+  width: 120vw;
   backdrop-filter: blur(20px) contrast(90%);
   -webkit-backdrop-filter: blur(20px) contrast(90%);
   display: none;
@@ -234,6 +237,7 @@ table {
     width: calc(100vw - 40px);
     height: 80vh !important;
     overflow-y: auto;
+    overflow-x: hidden;
     z-index: 10;
     display: none;
   }

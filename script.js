@@ -161,7 +161,8 @@ function decreaseOpacity() {
 function setOpacityToOne() {
   document.body.style.opacity = 1;
 }
-
-var opacityInterval = setInterval(decreaseOpacity, 666);
+if (windowWidth > 925) {
+  var opacityInterval = setInterval(decreaseOpacity, 666);
+}
 document.addEventListener('mousemove', setOpacityToOne);
 window.addEventListener('scroll', setOpacityToOne);
