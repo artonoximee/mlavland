@@ -28,7 +28,7 @@ for (let i = 0; i < rows.length; i++) {
     calculateHeights();
     if (windowWidth > 925) {
       window.scrollTo({
-        top: heights[i] + 24 + i * 2.3,
+        top: heights[i] + 24 + i * 2,
         left: 0,
         behavior: 'smooth'
       });
