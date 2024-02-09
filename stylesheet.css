@@ -98,6 +98,7 @@ section {
 .left-pane {
   position: fixed;
   width: 50vw;
+  height: 100vh;
   padding: 20px;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
