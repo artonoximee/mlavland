@@ -103,6 +103,7 @@ section {
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
+  overflow-y: auto;
 }
 
 .right-pane {
@@ -207,7 +208,6 @@ table {
 
 .left-pane--projects-list {
   width: 100%;
-  z-index: 3;
 }
 
 .backdrop {
