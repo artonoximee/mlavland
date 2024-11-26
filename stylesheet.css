@@ -281,3 +281,9 @@ table {
 .vimeo-player {
   margin-bottom: 20px;
 }
+
+audio {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
