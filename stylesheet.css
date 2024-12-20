@@ -277,6 +277,7 @@ table {
   width: 100%;
   height: auto;
   margin-bottom: 20px;
+  pointer-events: auto;
 }
 
 .vimeo-player {

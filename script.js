@@ -125,24 +125,31 @@ function colorBorderBottom(scrollPos) {
 let carousels = document.querySelectorAll("div.carousel")
 
 carousels.forEach(carousel => {
-  let imgs = []
-  let i = 0
+  let imgs = [];
+  let i = 0;
+  
   for (const child of carousel.children) {
     imgs.push(child);
   }
+  
   carousel.innerHTML = "";
   carousel.appendChild(imgs[i]);
-  carousel.addEventListener('click', (e) => {
+
+  const cycleImages = () => {
     if (i + 1 < imgs.length) {
       carousel.innerHTML = "";
-      i = i + 1
+      i = i + 1;
       carousel.appendChild(imgs[i]);
-    } else if (i+1 == imgs.length) {
+    } else if (i + 1 == imgs.length) {
       carousel.innerHTML = "";
       i = 0;
       carousel.appendChild(imgs[i]);
     }
-  })
-})
+  };
+
+  carousel.addEventListener('click', cycleImages);
+  carousel.addEventListener('touchend', cycleImages);
+});
+
 
 calculateHeights();
