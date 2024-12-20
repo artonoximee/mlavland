@@ -59,31 +59,39 @@ logo.addEventListener('click', (e) => {
 // Mobile menu
 
 let mobileLogo = document.querySelector("div.right-pane--logo");
-let projectsTable = document.querySelector("table.left-pane--projects-list");
-let topGradient = document.querySelector("div.top-gradient");
-let bottomGradient = document.querySelector("div.bottom-gradient");
-let backdrop = document.querySelector("div.backdrop");
+// let projectsTable = document.querySelector("table.left-pane--projects-list");
+// let topGradient = document.querySelector("div.top-gradient");
+// let bottomGradient = document.querySelector("div.bottom-gradient");
+// let backdrop = document.querySelector("div.backdrop");
 
-function openMobileMenu() {
-  projectsTable.style.display = "block";
-  backdrop.style.display = "block"
-  // topGradient.style.display = "none";
-  // bottomGradient.style.display = "none";
-}
+// function openMobileMenu() {
+//   projectsTable.style.display = "block";
+//   backdrop.style.display = "block"
+//   // topGradient.style.display = "none";
+//   // bottomGradient.style.display = "none";
+// }
 
-function closeMobileMenu() {
-  projectsTable.style.display = "none";
-  backdrop.style.display = "none"
-  // topGradient.style.display = "block";
-  // bottomGradient.style.display = "block";
-}
+// function closeMobileMenu() {
+//   projectsTable.style.display = "none";
+//   backdrop.style.display = "none"
+//   // topGradient.style.display = "block";
+//   // bottomGradient.style.display = "block";
+// }
 
-mobileLogo.addEventListener('click', (e) => {
-  if (projectsTable.style.display === "block") {
-    closeMobileMenu();
-  } else {
-    openMobileMenu();
-  }
+// mobileLogo.addEventListener('click', (e) => {
+//   if (projectsTable.style.display === "block") {
+//     closeMobileMenu();
+//   } else {
+//     openMobileMenu();
+//   }
+// });
+
+mobileLogo.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
 });
 
 // Scroll event listener
@@ -148,7 +156,6 @@ carousels.forEach(carousel => {
   };
 
   carousel.addEventListener('click', cycleImages);
-  carousel.addEventListener('touchend', cycleImages);
 });
 
 
